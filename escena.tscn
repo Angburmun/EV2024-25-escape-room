@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://pn4vyd7wu67u"]
+
+[ext_resource type="PackedScene" uid="uid://c14kfjqjja704" path="res://silla.tscn" id="1_865ah"]
+[ext_resource type="PackedScene" uid="uid://c7xdstrk74yeg" path="res://habitacion.tscn" id="1_ugwex"]
+[ext_resource type="Script" uid="uid://bdjguon1hky5f" path="res://camara.gd" id="3_sks45"]
+
+[node name="escena" type="Node3D"]
+
+[node name="habitacion" parent="." instance=ExtResource("1_ugwex")]
+
+[node name="sol" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="silla1" parent="." instance=ExtResource("1_865ah")]
+transform = Transform3D(-0.25038, 0, -0.968148, 0, 1, 0, 0.968148, 0, -0.25038, 1.14988, 0.65, -1.6977)
+
+[node name="silla2" parent="." instance=ExtResource("1_865ah")]
+transform = Transform3D(0.151261, 0, 0.988494, 0, 1, 0, -0.988494, 0, 0.151261, 0.365522, 0.65, 1.71851)
+
+[node name="silla3" parent="." instance=ExtResource("1_865ah")]
+transform = Transform3D(0.968148, 0, 0.25038, 0, 1, 0, -0.25038, 0, 0.968148, -1.58777, 0.65, 0.301846)
+
+[node name="camara" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 1.75, 2.01372)
+current = true
+script = ExtResource("3_sks45")

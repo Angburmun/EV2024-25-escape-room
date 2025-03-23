@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c7xdstrk74yeg"]
+
+[node name="habitacion" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+metadata/_edit_group_ = true
+
+[node name="exterior" type="CSGBox3D" parent="."]
+size = Vector3(5.5, 4, 5.5)
+
+[node name="interior" type="CSGBox3D" parent="exterior"]
+operation = 2
+size = Vector3(5.3, 3.8, 5.3)
