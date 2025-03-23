@@ -2,7 +2,6 @@
 
 [node name="habitacion" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
-metadata/_edit_group_ = true
 
 [node name="exterior" type="CSGBox3D" parent="."]
 size = Vector3(5.5, 4, 5.5)

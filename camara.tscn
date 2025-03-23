@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl2wtuxa6p5tn"]
+
+[ext_resource type="Script" uid="uid://bdjguon1hky5f" path="res://camara.gd" id="1_o68wd"]
+
+[node name="camara" type="Node3D"]
+script = ExtResource("1_o68wd")
+
+[node name="vista" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
+current = true
