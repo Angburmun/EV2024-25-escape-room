@@ -4,8 +4,8 @@ extends Node3D
 @export var vertical_min := deg_to_rad(-60)
 @export var vertical_max := deg_to_rad(60)
 
-var rotation_x := 0.0
-var rotation_y := 0.0
+@onready var rotation_y := $EjeY
+@onready var rotation_x := $EjeY/EjeX
 
 
 func _ready():
@@ -24,7 +24,5 @@ func _process(delta):
 	if Input.is_action_pressed("camara_abajo"):
 		vertical_input += 1
 	
-	rotation_y += horizontal_input * rotation_speed * delta
-	rotation_x = clamp(rotation_x + vertical_input * rotation_speed * delta, vertical_min, vertical_max)
-	
-	rotation = Vector3(rotation_x, rotation_y, 0)
+	rotation_y.rotate_y(horizontal_input * rotation_speed * delta)
+	rotation_x.rotation.x = clamp(rotation_x.rotation.x + vertical_input * rotation_speed * delta, vertical_min, vertical_max)
