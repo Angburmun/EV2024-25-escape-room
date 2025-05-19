@@ -9,7 +9,8 @@ extends Node3D
 
 
 func _ready():
-	pass
+	var parent = get_parent()
+	global_position = parent.global_position
 
 func _process(delta):
 	var horizontal_input := 0.0
