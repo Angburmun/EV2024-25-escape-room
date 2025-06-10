@@ -1,65 +1,79 @@
-[gd_scene format=3 uid="uid://b7rewe1nniolb"]
+[gd_scene load_steps=4 format=3 uid="uid://b7rewe1nniolb"]
+
+[ext_resource type="PackedScene" uid="uid://cpxacln0an4s3" path="res://BLENDER/aparador.glb" id="1_eehck"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sugwf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eehck"]
+albedo_color = Color(0.315341, 0.322778, 0.367599, 1)
 
 [node name="escena-pasillo" type="Node3D"]
 
-[node name="General" type="CSGBox3D" parent="."]
+[node name="habitacion1" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="habitacion1" type="CSGBox3D" parent="General"]
 size = Vector3(5.5, 4, 5.5)
 
-[node name="interior" type="CSGBox3D" parent="General/habitacion1"]
+[node name="interior" type="CSGBox3D" parent="habitacion1"]
 operation = 2
 size = Vector3(5.3, 3.8, 5.3)
 
-[node name="puerta" type="CSGBox3D" parent="General/habitacion1"]
+[node name="puerta" type="CSGBox3D" parent="habitacion1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47556, -0.386024, -0.0366344)
 operation = 2
 size = Vector3(1, 3, 2.55)
 
-[node name="habitacion2" type="CSGBox3D" parent="General"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 0, -15)
+[node name="aparador" parent="habitacion1" instance=ExtResource("1_eehck")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.6, -1.8, -0.5)
+
+[node name="Suelo" type="MeshInstance3D" parent="habitacion1"]
+transform = Transform3D(2.7, 0, 0, 0, 0.664, 0, 0, 0, 2.7, 0, -1.8, 0)
+mesh = SubResource("PlaneMesh_sugwf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_eehck")
+
+[node name="habitacion2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 2, -15)
 size = Vector3(11, 4, 8.25)
 
-[node name="interior" type="CSGBox3D" parent="General/habitacion2"]
+[node name="interior" type="CSGBox3D" parent="habitacion2"]
 operation = 2
 size = Vector3(10.8, 3.8, 8.05)
 
-[node name="puerta" type="CSGBox3D" parent="General/habitacion2"]
+[node name="puerta" type="CSGBox3D" parent="habitacion2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, -0.4, 1)
 operation = 2
 size = Vector3(1, 3, 2.55)
 
-[node name="pasillo1" type="CSGBox3D" parent="General"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, -0.4, 0)
+[node name="pasillo1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, 1.6, 0)
 size = Vector3(5.5, 3.2, 2.75)
 
-[node name="interior" type="CSGBox3D" parent="General/pasillo1"]
+[node name="interior" type="CSGBox3D" parent="pasillo1"]
 operation = 2
 size = Vector3(6, 3, 2.55)
 
-[node name="pasillo2" type="CSGBox3D" parent="General"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3, -0.4, -7)
+[node name="pasillo2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3, 1.6, -7)
 size = Vector3(2.75, 3.2, 16.75)
 
-[node name="interior" type="CSGBox3D" parent="General/pasillo2"]
+[node name="interior" type="CSGBox3D" parent="pasillo2"]
 operation = 2
 size = Vector3(2.55, 3, 16.355)
 
-[node name="arco1" type="CSGBox3D" parent="General/pasillo2"]
+[node name="arco1" type="CSGBox3D" parent="pasillo2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 7)
 operation = 2
 size = Vector3(1, 3, 2.55)
 
-[node name="arco2" type="CSGBox3D" parent="General/pasillo2"]
+[node name="arco2" type="CSGBox3D" parent="pasillo2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -7)
 operation = 2
 size = Vector3(1, 3, 2.55)
 
-[node name="pasillo3" type="CSGBox3D" parent="General"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, -0.4, -14)
+[node name="pasillo3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, 1.6, -14)
 size = Vector3(5.5, 3.2, 2.75)
 
-[node name="interior" type="CSGBox3D" parent="General/pasillo3"]
+[node name="interior" type="CSGBox3D" parent="pasillo3"]
 operation = 2
 size = Vector3(6, 3, 2.55)
