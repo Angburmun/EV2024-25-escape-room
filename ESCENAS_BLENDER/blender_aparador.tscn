@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxsxp5hgjo068"]
+
+[ext_resource type="PackedScene" uid="uid://c3jb7qa78k6jj" path="res://ESCENAS_BLENDER/blender_aparador.glb" id="1_dx6qr"]
+[ext_resource type="Script" uid="uid://s3kcls3irq7s" path="res://ESCENAS_BLENDER/blender_aparador.gd" id="2_0f7ne"]
+
+[node name="blender_aparador" instance=ExtResource("1_dx6qr")]
+script = ExtResource("2_0f7ne")
