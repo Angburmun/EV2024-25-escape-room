@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://rp6vosvd4fev"]
+
+[ext_resource type="PackedScene" uid="uid://cpxacln0an4s3" path="res://BLENDER/aparador.glb" id="1_f5no7"]
+
+[node name="aparador" instance=ExtResource("1_f5no7")]
