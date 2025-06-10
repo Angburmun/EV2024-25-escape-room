@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7rewe1nniolb"]
 
 [ext_resource type="PackedScene" uid="uid://bxsxp5hgjo068" path="res://ESCENAS_BLENDER/blender_aparador.tscn" id="2_66ue0"]
-[ext_resource type="Material" uid="uid://cp81j3s1f7ffo" path="res://TEXTURES/WoodFloor008_1K-JPG/parquet.tres" id="2_ke01q"]
+[ext_resource type="Material" uid="uid://kj1qjhwgyg1i" path="res://TEXTURES/parquet.tres" id="2_ke01q"]
 [ext_resource type="PackedScene" uid="uid://dl2wtuxa6p5tn" path="res://ESCENAS/camara.tscn" id="2_wsk1g"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sugwf"]
