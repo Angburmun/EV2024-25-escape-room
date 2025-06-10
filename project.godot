@@ -24,7 +24,8 @@ window/vsync/vsync_mode=0
 folder_colors={
 "res://BLENDER/": "orange",
 "res://ESCENAS/": "purple",
-"res://ESCENAS_BLENDER/": "orange"
+"res://ESCENAS_BLENDER/": "orange",
+"res://SCRIPTS/": "green"
 }
 
 [input]
