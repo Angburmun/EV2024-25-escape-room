@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7rewe1nniolb"]
+[gd_scene load_steps=5 format=3 uid="uid://b7rewe1nniolb"]
 
-[ext_resource type="PackedScene" uid="uid://c3jb7qa78k6jj" path="res://ESCENAS_BLENDER/blender_aparador.glb" id="1_eehck"]
+[ext_resource type="PackedScene" uid="uid://bxsxp5hgjo068" path="res://ESCENAS_BLENDER/blender_aparador.tscn" id="2_66ue0"]
+[ext_resource type="PackedScene" uid="uid://dl2wtuxa6p5tn" path="res://ESCENAS/camara.tscn" id="2_wsk1g"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sugwf"]
 
@@ -8,6 +9,9 @@
 albedo_color = Color(0.315341, 0.322778, 0.367599, 1)
 
 [node name="escena-pasillo" type="Node3D"]
+
+[node name="camara" parent="." instance=ExtResource("2_wsk1g")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="habitacion1" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
@@ -28,8 +32,10 @@ mesh = SubResource("PlaneMesh_sugwf")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_eehck")
 
-[node name="blender_aparador" parent="habitacion1" instance=ExtResource("1_eehck")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.6, -1.8, -0.5)
+[node name="blender_aparador" parent="habitacion1" instance=ExtResource("2_66ue0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.5, -1.8, -0.5)
+
+[node name="sol" type="OmniLight3D" parent="habitacion1"]
 
 [node name="habitacion2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 2, -15)
