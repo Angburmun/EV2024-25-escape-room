@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c14kfjqjja704" path="res://ESCENAS/silla.tscn" id="1_865ah"]
 [ext_resource type="PackedScene" uid="uid://c7xdstrk74yeg" path="res://ESCENAS/habitacion.tscn" id="1_ugwex"]
-[ext_resource type="PackedScene" uid="uid://dl2wtuxa6p5tn" path="res://ESCENAS/camara.tscn" id="3_sks45"]
+[ext_resource type="PackedScene" uid="uid://dl2wtuxa6p5tn" path="res://ESCENAS/camara_orbital.tscn" id="3_sks45"]
 [ext_resource type="PackedScene" uid="uid://bxsxp5hgjo068" path="res://ESCENAS_BLENDER/blender_aparador.tscn" id="4_uh5f3"]
 
 [node name="escena-sillas" type="Node3D"]
