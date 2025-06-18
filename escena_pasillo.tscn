@@ -1,8 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7rewe1nniolb"]
+[gd_scene load_steps=10 format=3 uid="uid://b7rewe1nniolb"]
 
-[ext_resource type="PackedScene" uid="uid://i75ortjs8325" path="res://ESCENAS/camara_fp.tscn" id="1_66ue0"]
+[ext_resource type="Script" uid="uid://cj15dfufotb1l" path="res://SCRIPTS/jugador.gd" id="1_ke01q"]
 [ext_resource type="PackedScene" uid="uid://bxsxp5hgjo068" path="res://ESCENAS_BLENDER/blender_aparador.tscn" id="2_66ue0"]
 [ext_resource type="Material" uid="uid://buecjx8f0ga8f" path="res://TEXTURES/parquet.tres" id="2_ke01q"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_66ue0"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_ke01q"]
+sky_material = SubResource("ProceduralSkyMaterial_66ue0")
+
+[sub_resource type="Environment" id="Environment_7wody"]
+background_mode = 2
+sky = SubResource("Sky_ke01q")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_66ue0"]
 
@@ -12,10 +25,12 @@
 
 [node name="escena-pasillo" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7wody")
+
 [node name="jugador" type="CharacterBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.5, 0)
-
-[node name="camara" parent="jugador" instance=ExtResource("1_66ue0")]
+script = ExtResource("1_ke01q")
 
 [node name="forma" type="MeshInstance3D" parent="jugador"]
 transform = Transform3D(0.75, 0, 0, 0, 1, 0, 0, 0, 0.75, 0, 0, 0)
@@ -25,8 +40,14 @@ mesh = SubResource("CapsuleMesh_66ue0")
 [node name="colision" type="CollisionShape3D" parent="jugador"]
 shape = SubResource("CapsuleShape3D_ke01q")
 
+[node name="cabeza" type="Node3D" parent="jugador"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+
+[node name="camara" type="Camera3D" parent="jugador/cabeza"]
+
 [node name="habitacion1" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+use_collision = true
 size = Vector3(5.5, 4, 5.5)
 
 [node name="interior" type="CSGBox3D" parent="habitacion1"]
@@ -53,6 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
 [node name="habitacion2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 2, -15)
+use_collision = true
 size = Vector3(11, 4, 8.25)
 
 [node name="interior" type="CSGBox3D" parent="habitacion2"]
@@ -76,6 +98,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
 [node name="pasillo1" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, 1.6, 0)
+use_collision = true
 size = Vector3(5.5, 3.2, 2.75)
 
 [node name="interior" type="CSGBox3D" parent="pasillo1"]
@@ -91,6 +114,7 @@ surface_material_override/0 = ExtResource("2_ke01q")
 
 [node name="pasillo2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3, 1.6, -7)
+use_collision = true
 size = Vector3(2.75, 3.2, 16.75)
 
 [node name="interior" type="CSGBox3D" parent="pasillo2"]
@@ -119,6 +143,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
 [node name="pasillo3" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, 1.6, -14)
+use_collision = true
 size = Vector3(5.5, 3.2, 2.75)
 
 [node name="interior" type="CSGBox3D" parent="pasillo3"]
