@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7rewe1nniolb"]
+[gd_scene load_steps=11 format=3 uid="uid://b7rewe1nniolb"]
 
 [ext_resource type="Script" uid="uid://cj15dfufotb1l" path="res://SCRIPTS/jugador.gd" id="1_ke01q"]
 [ext_resource type="PackedScene" uid="uid://bxsxp5hgjo068" path="res://ESCENAS_BLENDER/blender_aparador.tscn" id="2_66ue0"]
 [ext_resource type="Material" uid="uid://buecjx8f0ga8f" path="res://TEXTURES/parquet.tres" id="2_ke01q"]
+[ext_resource type="PackedScene" uid="uid://ubdnpjjh75if" path="res://ESCENAS/bombilla.tscn" id="4_7wody"]
 [ext_resource type="PackedScene" uid="uid://vktm5u2yhw35" path="res://ESCENAS/puerta.tscn" id="4_ke01q"]
+[ext_resource type="Script" uid="uid://i7vrwypx73h2" path="res://ESCENAS/bombilla.gd" id="5_2v5a0"]
 
 [sub_resource type="Environment" id="Environment_7wody"]
 ambient_light_color = Color(0.852515, 0.370982, 0.122975, 1)
@@ -66,8 +68,9 @@ surface_material_override/0 = ExtResource("2_ke01q")
 [node name="blender_aparador" parent="habitacion1" instance=ExtResource("2_66ue0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.5, -1.85, -0.5)
 
-[node name="bombilla" type="OmniLight3D" parent="habitacion1"]
+[node name="bombilla" parent="habitacion1" instance=ExtResource("4_7wody")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+script = ExtResource("5_2v5a0")
 
 [node name="habitacion2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 2, -15)
@@ -90,7 +93,7 @@ mesh = SubResource("PlaneMesh_sugwf")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_ke01q")
 
-[node name="bombilla" type="OmniLight3D" parent="habitacion2"]
+[node name="bombilla" parent="habitacion2" instance=ExtResource("4_7wody")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
 [node name="pasillo1" type="CSGBox3D" parent="."]
@@ -111,6 +114,9 @@ surface_material_override/0 = ExtResource("2_ke01q")
 
 [node name="puerta" parent="pasillo1" instance=ExtResource("4_ke01q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+
+[node name="bombilla" parent="pasillo1" instance=ExtResource("4_7wody")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
 [node name="pasillo2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3, 1.6, -7)
@@ -138,7 +144,7 @@ mesh = SubResource("PlaneMesh_sugwf")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_ke01q")
 
-[node name="bombilla" type="OmniLight3D" parent="pasillo2"]
+[node name="bombilla" parent="pasillo2" instance=ExtResource("4_7wody")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
 [node name="pasillo3" type="CSGBox3D" parent="."]
@@ -156,3 +162,6 @@ material_override = ExtResource("2_ke01q")
 mesh = SubResource("PlaneMesh_sugwf")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_ke01q")
+
+[node name="bombilla" parent="pasillo3" instance=ExtResource("4_7wody")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
