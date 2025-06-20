@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7rewe1nniolb"]
+[gd_scene load_steps=12 format=3 uid="uid://b7rewe1nniolb"]
 
 [ext_resource type="Script" uid="uid://cj15dfufotb1l" path="res://SCRIPTS/jugador.gd" id="1_ke01q"]
 [ext_resource type="PackedScene" uid="uid://bxsxp5hgjo068" path="res://ESCENAS_BLENDER/blender_aparador.tscn" id="2_66ue0"]
+[ext_resource type="Script" uid="uid://b2x7e7e5hqgsi" path="res://raycast.gd" id="2_g70ch"]
 [ext_resource type="Material" uid="uid://buecjx8f0ga8f" path="res://TEXTURES/parquet.tres" id="2_ke01q"]
 [ext_resource type="PackedScene" uid="uid://ubdnpjjh75if" path="res://ESCENAS/bombilla.tscn" id="4_7wody"]
 [ext_resource type="PackedScene" uid="uid://vktm5u2yhw35" path="res://ESCENAS/puerta.tscn" id="4_ke01q"]
-[ext_resource type="Script" uid="uid://i7vrwypx73h2" path="res://ESCENAS/bombilla.gd" id="5_2v5a0"]
+[ext_resource type="Script" uid="uid://i7vrwypx73h2" path="res://SCRIPTS/bombilla.gd" id="5_2v5a0"]
 
 [sub_resource type="Environment" id="Environment_7wody"]
 ambient_light_color = Color(0.852515, 0.370982, 0.122975, 1)
@@ -43,6 +44,11 @@ shape = SubResource("CapsuleShape3D_ke01q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 
 [node name="camara" type="Camera3D" parent="jugador/cabeza"]
+
+[node name="raycast" type="RayCast3D" parent="jugador/cabeza/camara"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(1, 0, 0)
+script = ExtResource("2_g70ch")
 
 [node name="habitacion1" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

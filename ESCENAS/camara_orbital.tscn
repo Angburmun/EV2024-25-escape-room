@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dl2wtuxa6p5tn"]
 
-[ext_resource type="Script" uid="uid://bdjguon1hky5f" path="res://ESCENAS/camara.gd" id="1_o68wd"]
+[ext_resource type="Script" uid="uid://bdjguon1hky5f" path="res://SCRIPTS/camara.gd" id="1_o68wd"]
 
 [node name="camara" type="Node3D"]
 script = ExtResource("1_o68wd")

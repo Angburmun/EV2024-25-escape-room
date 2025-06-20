@@ -1,7 +1,78 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxsxp5hgjo068"]
+[gd_scene load_steps=8 format=3 uid="uid://bxsxp5hgjo068"]
 
 [ext_resource type="PackedScene" uid="uid://c3jb7qa78k6jj" path="res://ESCENAS_BLENDER/blender_aparador.glb" id="1_dx6qr"]
 [ext_resource type="Script" uid="uid://s3kcls3irq7s" path="res://ESCENAS_BLENDER/blender_aparador.gd" id="2_0f7ne"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0f7ne"]
+size = Vector3(0.75, 2, 1)
+
+[sub_resource type="Animation" id="Animation_6h4hi"]
+resource_name = "cerrar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Cajon:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.6, 1.7375, -0.0625), Vector3(0.063, 1.737, -0.062)]
+}
+
+[sub_resource type="Animation" id="Animation_sxsx4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Cajon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.063, 1.737, -0.062)]
+}
+
+[sub_resource type="Animation" id="Animation_a265u"]
+resource_name = "abrir"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Cajon:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.063, 1.737, -0.062), Vector3(0.6, 1.7375, -0.0625)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kxt6g"]
+_data = {
+&"RESET": SubResource("Animation_sxsx4"),
+&"abrir": SubResource("Animation_a265u"),
+&"cerrar": SubResource("Animation_6h4hi")
+}
+
 [node name="blender_aparador" instance=ExtResource("1_dx6qr")]
+
+[node name="cuerpo" type="StaticBody3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.942148, 0, 0)
 script = ExtResource("2_0f7ne")
+
+[node name="colision" type="CollisionShape3D" parent="cuerpo" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+shape = SubResource("BoxShape3D_0f7ne")
+
+[node name="Cajon" parent="." index="2"]
+transform = Transform3D(0.29375, 0, 0, 0, 0.1, 0, 0, 0, 0.203125, 0.063, 1.737, -0.062)
+
+[node name="animation_godot" type="AnimationPlayer" parent="." index="4"]
+root_node = NodePath("../AnimationPlayer")
+libraries = {
+&"": SubResource("AnimationLibrary_kxt6g")
+}
