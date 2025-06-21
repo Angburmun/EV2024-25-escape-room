@@ -1,6 +1,6 @@
 extends RayCast3D
 
-func _process(delta):
+func _process(_delta):
 	if is_colliding():
 		var hitObj = get_collider()
 		

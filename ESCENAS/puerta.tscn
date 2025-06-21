@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://vktm5u2yhw35"]
+[gd_scene load_steps=9 format=3 uid="uid://vktm5u2yhw35"]
 
 [ext_resource type="Script" uid="uid://xbrd2sp8c6ie" path="res://SCRIPTS/puerta.gd" id="1_64u3a"]
 
@@ -55,7 +55,13 @@ _data = {
 }
 
 [sub_resource type="BoxMesh" id="BoxMesh_qhvd8"]
-size = Vector3(0.05, 3, 2.55)
+size = Vector3(0.05, 3, 2.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_64u3a"]
+size = Vector3(0.225, 3, 0.225)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ccbui"]
+size = Vector3(0.225, 0.225, 2.525)
 
 [node name="puerta" type="Node3D"]
 
@@ -66,18 +72,37 @@ libraries = {
 }
 
 [node name="bisagra" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1)
 
 [node name="puerta" type="CSGMesh3D" parent="bisagra"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.15)
 use_collision = true
 mesh = SubResource("BoxMesh_qhvd8")
 script = ExtResource("1_64u3a")
 
 [node name="pomo1" type="CSGSphere3D" parent="bisagra/puerta"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0.75)
 radius = 0.1
 
 [node name="pomo2" type="CSGSphere3D" parent="bisagra/puerta"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0.75)
 radius = 0.1
+
+[node name="marco" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.15)
+use_collision = true
+mesh = SubResource("BoxMesh_64u3a")
+
+[node name="marcoSup" type="CSGMesh3D" parent="marco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 1.15)
+use_collision = true
+mesh = SubResource("BoxMesh_ccbui")
+
+[node name="marcoLat2" type="CSGMesh3D" parent="marco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3)
+use_collision = true
+mesh = SubResource("BoxMesh_64u3a")
+
+[node name="marcoLat" type="CSGMesh3D" parent="marco"]
+use_collision = true
+mesh = SubResource("BoxMesh_64u3a")
