@@ -171,3 +171,6 @@ surface_material_override/0 = ExtResource("2_ke01q")
 
 [node name="bombilla" parent="pasillo3" instance=ExtResource("4_7wody")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="puerta" parent="pasillo3" instance=ExtResource("4_ke01q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
