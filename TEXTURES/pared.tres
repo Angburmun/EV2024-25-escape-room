@@ -6,10 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://dj1n1ya2p556j" path="res://TEXTURES/WoodSiding006_1K-JPG/WoodSiding006_1K-JPG_Roughness.jpg" id="3_auf4i"]
 
 [resource]
+albedo_color = Color(0.625597, 0.625597, 0.625597, 1)
 albedo_texture = ExtResource("1_rotxl")
+metallic_specular = 0.2
 roughness_texture = ExtResource("3_auf4i")
 normal_enabled = true
 normal_texture = ExtResource("2_asd3a")
+ao_light_affect = 1.0
 heightmap_texture = ExtResource("2_auf4i")
 uv1_scale = Vector3(0.4, 0.4, 0.4)
 uv1_triplanar = true
