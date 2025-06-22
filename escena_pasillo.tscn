@@ -1,15 +1,16 @@
-[gd_scene load_steps=28 format=3 uid="uid://b7rewe1nniolb"]
+[gd_scene load_steps=30 format=3 uid="uid://b7rewe1nniolb"]
 
 [ext_resource type="Script" uid="uid://cj15dfufotb1l" path="res://SCRIPTS/jugador.gd" id="1_ke01q"]
 [ext_resource type="PackedScene" uid="uid://bxsxp5hgjo068" path="res://ESCENAS_BLENDER/blender_aparador.tscn" id="2_66ue0"]
 [ext_resource type="Script" uid="uid://b2x7e7e5hqgsi" path="res://SCRIPTS/raycast.gd" id="2_g70ch"]
 [ext_resource type="Material" uid="uid://buecjx8f0ga8f" path="res://TEXTURES/parquet.tres" id="2_ke01q"]
 [ext_resource type="Material" uid="uid://bhkmdo6mupi6n" path="res://TEXTURES/pared.tres" id="3_nodsr"]
-[ext_resource type="Script" uid="uid://c7jw3exu43utx" path="res://ladrillo.gd" id="3_suop6"]
+[ext_resource type="Script" uid="uid://c7jw3exu43utx" path="res://SCRIPTS/ladrillo.gd" id="3_suop6"]
 [ext_resource type="PackedScene" uid="uid://ubdnpjjh75if" path="res://ESCENAS/bombilla.tscn" id="4_7wody"]
 [ext_resource type="PackedScene" uid="uid://vktm5u2yhw35" path="res://ESCENAS/puerta.tscn" id="4_ke01q"]
 [ext_resource type="Script" uid="uid://i7vrwypx73h2" path="res://SCRIPTS/bombilla.gd" id="5_2v5a0"]
 [ext_resource type="Material" uid="uid://b1b4hhjk8sif4" path="res://TEXTURES/techo.tres" id="8_k8e6y"]
+[ext_resource type="Script" uid="uid://b6orh1nmuuebd" path="res://SCRIPTS/area_descarga.gd" id="11_lho45"]
 
 [sub_resource type="Environment" id="Environment_7wody"]
 ambient_light_color = Color(0.852515, 0.370982, 0.122975, 1)
@@ -59,6 +60,9 @@ size = Vector2(2.7, 16.6)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_j0adf"]
 size = Vector2(2.7, 16.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j0adf"]
+size = Vector3(3, 3, 0.01)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o2isp"]
 size = Vector2(6, 2.55)
@@ -245,6 +249,12 @@ surface_material_override/0 = ExtResource("2_ke01q")
 
 [node name="bombilla" parent="geometria/pasillo2" instance=ExtResource("4_7wody")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="area_descarga" type="Area3D" parent="geometria/pasillo2"]
+script = ExtResource("11_lho45")
+
+[node name="colision" type="CollisionShape3D" parent="geometria/pasillo2/area_descarga"]
+shape = SubResource("BoxShape3D_j0adf")
 
 [node name="pasillo3" type="CSGBox3D" parent="geometria"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 1.6, -14)
