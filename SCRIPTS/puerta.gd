@@ -1,15 +1,15 @@
 extends CSGMesh3D
 
-var abierto = false
+var cerrado = false
 var en_movimiento = false
 @onready var animation_player = $"../../animaciones"
 
 func interact():
 	if !en_movimiento:
 		en_movimiento = true
-		abierto = !abierto
+		cerrado = !cerrado
 		
-		if abierto:
+		if cerrado:
 			animation_player.play("animation_open")
 		else:
 			animation_player.play("animation_close")
