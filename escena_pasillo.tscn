@@ -62,7 +62,7 @@ size = Vector2(2.7, 16.6)
 size = Vector2(2.7, 16.6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j0adf"]
-size = Vector3(3, 3, 0.01)
+size = Vector3(3, 3, 5)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o2isp"]
 size = Vector2(6, 2.55)
