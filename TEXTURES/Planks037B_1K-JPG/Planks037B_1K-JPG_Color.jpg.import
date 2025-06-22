@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crvc20galyxj5"
-path.s3tc="res://.godot/imported/WoodFloor008_1K-JPG_Displacement.jpg-0a3b6786475dbafb00ee7e1146063580.s3tc.ctex"
+uid="uid://b3gn7hrjmy6kf"
+path.s3tc="res://.godot/imported/Planks037B_1K-JPG_Color.jpg-b00fac020a9c7da56f6c0faa1e5bf236.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://TEXTURES/WoodFloor008_1K-JPG/WoodFloor008_1K-JPG_Displacement.jpg"
-dest_files=["res://.godot/imported/WoodFloor008_1K-JPG_Displacement.jpg-0a3b6786475dbafb00ee7e1146063580.s3tc.ctex"]
+source_file="res://TEXTURES/Planks037B_1K-JPG/Planks037B_1K-JPG_Color.jpg"
+dest_files=["res://.godot/imported/Planks037B_1K-JPG_Color.jpg-b00fac020a9c7da56f6c0faa1e5bf236.s3tc.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crvc20galyxj5"
-path.s3tc="res://.godot/imported/WoodFloor008_1K-JPG_Displacement.jpg-0a3b6786475dbafb00ee7e1146063580.s3tc.ctex"
+uid="uid://chqvrnyc0bfbb"
+path.s3tc="res://.godot/imported/WoodSiding006_1K-JPG_Displacement.jpg-71399ee8e2690ae63442b22ea13cd427.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://TEXTURES/WoodFloor008_1K-JPG/WoodFloor008_1K-JPG_Displacement.jpg"
-dest_files=["res://.godot/imported/WoodFloor008_1K-JPG_Displacement.jpg-0a3b6786475dbafb00ee7e1146063580.s3tc.ctex"]
+source_file="res://TEXTURES/WoodSiding006_1K-JPG/WoodSiding006_1K-JPG_Displacement.jpg"
+dest_files=["res://.godot/imported/WoodSiding006_1K-JPG_Displacement.jpg-71399ee8e2690ae63442b22ea13cd427.s3tc.ctex"]
 
 [params]
 

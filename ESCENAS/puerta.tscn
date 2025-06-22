@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://vktm5u2yhw35"]
+[gd_scene load_steps=12 format=3 uid="uid://vktm5u2yhw35"]
 
 [ext_resource type="Script" uid="uid://xbrd2sp8c6ie" path="res://SCRIPTS/puerta.gd" id="1_64u3a"]
+[ext_resource type="Material" uid="uid://b31t0o40e77da" path="res://TEXTURES/pomo.tres" id="2_ccbui"]
+[ext_resource type="Material" uid="uid://bl2aly7cvb27f" path="res://TEXTURES/marco.tres" id="3_qxrma"]
 
 [sub_resource type="Animation" id="Animation_qxrma"]
 length = 0.001
@@ -57,6 +59,12 @@ _data = {
 [sub_resource type="BoxMesh" id="BoxMesh_qhvd8"]
 size = Vector3(0.05, 3, 2.3)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64u3a"]
+albedo_color = Color(0.60933, 0.60933, 0.60933, 1)
+metallic_specular = 0.6
+roughness = 0.0
+emission = Color(0.301961, 1, 0.192157, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_64u3a"]
 size = Vector3(0.225, 3, 0.225)
 
@@ -78,31 +86,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.15)
 use_collision = true
 mesh = SubResource("BoxMesh_qhvd8")
+material = SubResource("StandardMaterial3D_64u3a")
 script = ExtResource("1_64u3a")
 
 [node name="pomo1" type="CSGSphere3D" parent="bisagra/puerta"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0.75)
 radius = 0.1
+material = ExtResource("2_ccbui")
 
 [node name="pomo2" type="CSGSphere3D" parent="bisagra/puerta"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0.75)
+material_override = ExtResource("2_ccbui")
 radius = 0.1
+material = ExtResource("2_ccbui")
 
 [node name="marco" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.15)
+material_override = ExtResource("3_qxrma")
 use_collision = true
 mesh = SubResource("BoxMesh_64u3a")
+material = ExtResource("3_qxrma")
 
 [node name="marcoSup" type="CSGMesh3D" parent="marco"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 1.15)
+material_override = ExtResource("3_qxrma")
 use_collision = true
 mesh = SubResource("BoxMesh_ccbui")
+material = ExtResource("3_qxrma")
 
 [node name="marcoLat2" type="CSGMesh3D" parent="marco"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3)
 use_collision = true
 mesh = SubResource("BoxMesh_64u3a")
+material = ExtResource("3_qxrma")
 
 [node name="marcoLat" type="CSGMesh3D" parent="marco"]
 use_collision = true
 mesh = SubResource("BoxMesh_64u3a")
+material = ExtResource("3_qxrma")
