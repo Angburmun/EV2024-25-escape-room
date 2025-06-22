@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b7rewe1nniolb"]
+[gd_scene load_steps=25 format=3 uid="uid://b7rewe1nniolb"]
 
 [ext_resource type="Script" uid="uid://cj15dfufotb1l" path="res://SCRIPTS/jugador.gd" id="1_ke01q"]
 [ext_resource type="Script" uid="uid://b2x7e7e5hqgsi" path="res://SCRIPTS/raycast.gd" id="2_g70ch"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://ubdnpjjh75if" path="res://ESCENAS/bombilla.tscn" id="4_7wody"]
 [ext_resource type="PackedScene" uid="uid://vktm5u2yhw35" path="res://ESCENAS/puerta.tscn" id="4_ke01q"]
 [ext_resource type="PackedScene" uid="uid://14h5quvwdfl" path="res://ESCENAS/habitacion_1.tscn" id="4_lho45"]
-[ext_resource type="PackedScene" uid="uid://bjusk4dy0iwr5" path="res://ESCENAS/habitacion_2.tscn" id="5_j0adf"]
 [ext_resource type="Material" uid="uid://b1b4hhjk8sif4" path="res://TEXTURES/techo.tres" id="8_k8e6y"]
 [ext_resource type="Script" uid="uid://b6orh1nmuuebd" path="res://SCRIPTS/area_descarga.gd" id="11_lho45"]
 
@@ -107,9 +106,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_k8e6y")
 
 [node name="habitacion1" parent="geometria" instance=ExtResource("4_lho45")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="habitacion2" parent="geometria" instance=ExtResource("5_j0adf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 2, -15)
 
 [node name="pasillo1" type="CSGBox3D" parent="geometria"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 1.6, 0)
