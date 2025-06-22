@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://b7rewe1nniolb"]
+[gd_scene load_steps=28 format=3 uid="uid://b7rewe1nniolb"]
 
 [ext_resource type="Script" uid="uid://cj15dfufotb1l" path="res://SCRIPTS/jugador.gd" id="1_ke01q"]
 [ext_resource type="PackedScene" uid="uid://bxsxp5hgjo068" path="res://ESCENAS_BLENDER/blender_aparador.tscn" id="2_66ue0"]
 [ext_resource type="Script" uid="uid://b2x7e7e5hqgsi" path="res://SCRIPTS/raycast.gd" id="2_g70ch"]
 [ext_resource type="Material" uid="uid://buecjx8f0ga8f" path="res://TEXTURES/parquet.tres" id="2_ke01q"]
 [ext_resource type="Material" uid="uid://bhkmdo6mupi6n" path="res://TEXTURES/pared.tres" id="3_nodsr"]
+[ext_resource type="Script" uid="uid://c7jw3exu43utx" path="res://ladrillo.gd" id="3_suop6"]
 [ext_resource type="PackedScene" uid="uid://ubdnpjjh75if" path="res://ESCENAS/bombilla.tscn" id="4_7wody"]
 [ext_resource type="PackedScene" uid="uid://vktm5u2yhw35" path="res://ESCENAS/puerta.tscn" id="4_ke01q"]
 [ext_resource type="Script" uid="uid://i7vrwypx73h2" path="res://SCRIPTS/bombilla.gd" id="5_2v5a0"]
@@ -100,6 +101,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 transform = Transform3D(0.5, 0.433013, 0.75, 0, 0.866025, -0.5, -0.866025, 0.25, 0.433013, 0.9, 0, -1.5)
 mass = 2.3
 physics_material_override = SubResource("PhysicsMaterial_k8e6y")
+script = ExtResource("3_suop6")
 
 [node name="colision" type="CollisionShape3D" parent="objects/ladrillo"]
 shape = SubResource("BoxShape3D_suop6")
